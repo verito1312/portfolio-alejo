@@ -1,0 +1,60 @@
+#presupuestos {
+  .form-control {
+    background-color: $secondary-color;
+    color: $text-color;
+    border: 1px solid lighten($secondary-color, 10%);
+    border-radius: $border-radius;
+
+    &:focus {
+      @include box-shadow($primary-color, 10px); 
+    }
+  }
+
+  .btn {
+    background-color: transparent;
+    color: $text-color;
+    border: 1px solid $text-color;
+    padding: 0.5rem 1.5rem;
+    border-radius: $border-radius;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: $text-color;
+      color: $background-color;
+    }
+  }
+
+  .custom-card {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    background-color: $color-fondo;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    form {
+      .form-label {
+        color: $color-texto;
+        font-weight: bold;
+      }
+
+      .form-control {
+        background-color: $color-fondo;
+        color: $color-texto;
+        border: 1px solid $color-borde;
+        border-radius: 5px;
+        padding: 0.5rem;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: $color-hover;
+      }
+
+      small {
+        color: $color-texto;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+#proyectos {
+  background-color: $secondary-color;
+  color: $text-color;
+
+  .card {
+    background-color: $secondary-color;
+    color: $text-color;
+    border-radius: $border-radius;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // 4 columnas iguales
+    gap: 1.5rem; // Espaciado entre las cards
+  }
+
+  .project-card {
+    background-color: $color-fondo;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    text-align: center;
+
+    .project-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+
+    .project-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: $color-texto;
+    }
+
+    .project-text {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: $color-texto;
+      line-height: 1.5;
+    }
+  }
+}

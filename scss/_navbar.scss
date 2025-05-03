@@ -1,0 +1,14 @@
+.navbar {
+  background-color: $secondary-color;
+  color: $text-color;
+  @include box-shadow(#000, 6px);
+
+  a {
+    color: $text-color;
+    @include transition(color, 0.3s);
+
+    &:hover {
+      color: $link-hover-color;
+    }
+  }
+}

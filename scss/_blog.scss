@@ -1,0 +1,57 @@
+#blog {
+  img {
+    border-radius: $border-radius;
+    @include box-shadow(#000, 6px);
+  }
+
+  h5 {
+    font-size: $font-size-large;
+    margin-bottom: $spacing-small;
+  }
+
+  p {
+    font-size: $font-size-base;
+    line-height: 1.6;
+  }
+
+  .card {
+    background-color: $secondary-color;
+    color: $text-color;
+    border-radius: $border-radius;
+    @include box-shadow(#000, 6px); // Usa el mixin box-shadow
+  }
+
+  .blog-article {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    background-color: $color-fondo;
+    border-radius: 5px;
+    padding: 1rem;
+
+    .blog-image img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .blog-content {
+      flex: 1;
+
+      h5 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: $color-texto;
+      }
+
+      p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        color: $color-texto;
+        line-height: 1.5;
+      }
+    }
+  }
+}

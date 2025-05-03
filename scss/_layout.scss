@@ -1,0 +1,25 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+header {
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: $color-header;
+  color: #e0e0e0;
+
+  img {
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+}
+
+footer {
+  background-color: $color-navbar;
+  color: $color-texto !important;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}

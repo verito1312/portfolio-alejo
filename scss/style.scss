@@ -1,0 +1,48 @@
+@import 'variables';
+@import 'mixins';
+@import 'sobremi';
+@import 'proyectos';
+@import 'blog';
+@import 'presupuestos';
+@import 'contacto';
+@import 'base';
+@import 'layout';
+@import 'components';
+@import 'responsive';
+
+.bg-dark {
+  background-color: $color-fondo !important;
+}
+
+.text-light {
+  color: $color-texto !important;
+}
+
+.btn-outline-light {
+  color: $color-texto;
+  border: 1px solid $color-borde;
+  @include transition(background-color, color);
+
+  &:hover {
+    background-color: $color-texto;
+    color: #000;
+  }
+}
+
+.container {
+  max-width: $ancho-maximo;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-img {
+    width: 100%;
+    max-width: 300px;
+  }
+}

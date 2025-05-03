@@ -1,0 +1,13 @@
+@media (max-width: 768px) {
+  #sobre-mi .col-md-6,
+  #proyectos .col-md-4,
+  #blog .col-md-6 {
+    max-width: 100%;
+  }
+
+  #sobre-mi .row,
+  #proyectos .row,
+  #blog .row {
+    flex-direction: column;
+  }
+}

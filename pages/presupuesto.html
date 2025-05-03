@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de Alejandro Tejera, Diseñador Industrial.">
+  <title>Presupuesto - Alejandro Tejera</title>
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a class="navbar-brand" href="../index.html">Home</a>
+      <ul class="navbar-menu">
+        <li><a href="./sobremi.html">Sobre mí</a></li>
+        <li><a href="./proyectos.html">Proyectos</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="./presupuesto.html">Presupuestos</a></li>
+        <li><a href="./contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main>
+    <section id="presupuestos">
+      <div class="container">
+        <h1>Presupuesto</h1>
+        <p class="section-title text-center">Completa el formulario para recibir un presupuesto personalizado para tu proyecto.</p>
+        <div class="custom-card">
+          <form class="row g-3" enctype="multipart/form-data">
+
+
+            <!-- Nombre -->
+            <div class="col-12">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Tu nombre" required>
+            </div>
+            <!-- Correo -->
+            <div class="col-12">
+              <label for="correo" class="form-label">Correo electrónico</label>
+              <input type="email" name="correo" id="correo" class="form-control" placeholder="Tu correo electrónico" required>
+              <small class="text-muted">Por favor, introduce un correo válido.</small>
+            </div>
+            <!-- Teléfono -->
+            <div class="col-12">
+              <label for="telefono" class="form-label">Teléfono</label>
+              <input type="tel" name="telefono" id="telefono" class="form-control" placeholder="Tu teléfono" pattern="[0-9]{10}" title="Introduce un número de teléfono válido (10 dígitos)">
+            </div>
+            <!-- Archivo -->
+            <div class="col-12">
+              <label for="archivo" class="form-label">Adjuntar archivo</label>
+              <input type="file" name="archivo" id="archivo" class="form-control" accept=".pdf,.doc,.docx,.jpg,.png">
+              <small class="text-muted">Formatos permitidos: PDF, DOC, DOCX, JPG, PNG.</small>
+            </div>
+            <!-- Descripción -->
+            <div class="col-12">
+              <label for="descripcion" class="form-label">Descripción del trabajo</label>
+              <textarea name="descripcion" id="descripcion" class="form-control" rows="5" placeholder="Describe tu proyecto" required></textarea>
+            </div>
+            <!-- Botón -->
+            <div class="col-12 text-center">
+              <button type="submit" class="btn btn-outline-light px-4 py-2">Solicitar Presupuesto</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Alejandro Tejera - Diseñador Industrial | Todos los derechos reservados.</p>
+    <p><a href="https://github.com/verito1312/web.git" target="_blank" rel="noopener">Ver sitio en GitHub Pages</a></p>
+  </footer>
+
+  <!-- scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+    });
+  </script>
+</body>
+</html>

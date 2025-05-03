@@ -1,0 +1,78 @@
+#contacto {
+  .contacto-section {
+    background-color: $color-fondo; // Usa la variable de fondo oscuro
+    color: $color-texto;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      background-color: $color-fondo;
+      border-radius: 5px;
+
+      form {
+        .form-label {
+          color: $color-texto;
+          font-weight: bold;
+        }
+
+        .form-control {
+          background-color: $color-fondo;
+          color: $color-texto;
+          border: 1px solid $color-borde;
+          border-radius: 5px;
+          padding: 0.5rem;
+        }
+
+        .form-control:focus {
+          outline: none;
+          border-color: $color-hover;
+        }
+
+        small {
+          color: $color-texto;
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .contacto-form {
+      .form-control {
+        background-color: $color-fondo; // Fondo oscuro
+        color: $color-texto; // Texto claro
+        border: 1px solid lighten($color-fondo, 10%); // Bordes claros
+        border-radius: $border-radius;
+
+        &:focus {
+          border-color: $primary-color;
+          box-shadow: 0 0 5px rgba($primary-color, 0.5);
+        }
+      }
+
+      .btn {
+        background-color: transparent;
+        color: $color-texto;
+        border: 1px solid $color-texto;
+        padding: 0.5rem 1.5rem;
+        border-radius: $border-radius;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          background-color: $color-texto;
+          color: $color-fondo;
+        }
+      }
+    }
+  }
+}
