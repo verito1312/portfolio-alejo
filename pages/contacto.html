@@ -5,20 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portafolio de Alejandro Tejera, Diseñador Industrial.">
   <title>Contacto - Alejandro Tejera</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
 
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-container">
-      <a class="navbar-brand" href="../index.html">Home</a>
+      <a class="navbar-brand" href="../index.html" title="Inicio">
+        <i class="bi bi-house-door-fill"></i>
+      </a>
       <ul class="navbar-menu">
         <li><a href="./sobremi.html">Sobre mí</a></li>
         <li><a href="./proyectos.html">Proyectos</a></li>
         <li><a href="./blog.html">Blog</a></li>
-        <li><a href="./presupuesto.html">Presupuestos</a></li>
+        <li><a href="./presupuesto.html">Presupuesto</a></li>
         <li><a href="./contacto.html">Contacto</a></li>
       </ul>
     </div>
@@ -33,17 +37,32 @@
         <p class="section-title text-center">Si tienes alguna consulta o proyecto, no dudes en escribirme.</p>
         <div class="form-wrapper">
           <form class="contacto-form" action="#" method="post">
+            <!-- Campo Nombre -->
             <div class="mb-3">
-              <input type="text" name="nombre" class="form-control bg-dark text-light border-light" placeholder="Nombre" required>
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" id="nombre" name="nombre" class="form-control bg-dark text-light border-light" placeholder="Nombre" required>
+              <small class="text-muted">Por favor, ingresa tu nombre completo.</small>
             </div>
+
+            <!-- Campo Correo Electrónico -->
             <div class="mb-3">
-              <input type="email" name="email" class="form-control bg-dark text-light border-light" placeholder="Correo electrónico" required>
+              <label for="email" class="form-label">Correo Electrónico</label>
+              <input type="email" id="email" name="email" class="form-control bg-dark text-light border-light" placeholder="Correo electrónico" required>
+              <small class="text-muted">Asegúrate de ingresar un correo válido para que podamos contactarte.</small>
             </div>
+
+            <!-- Campo Mensaje -->
             <div class="mb-3">
-              <textarea name="mensaje" rows="5" class="form-control bg-dark text-light border-light" placeholder="Tu mensaje..." required></textarea>
+              <label for="mensaje" class="form-label">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="5" class="form-control bg-dark text-light border-light" placeholder="Tu mensaje..." required></textarea>
+              <small class="text-muted">Escribe los detalles de tu consulta o proyecto.</small>
             </div>
+
+            <!-- Botón Enviar -->
             <div class="text-center">
-              <button type="submit" class="btn btn-outline-light px-4">Enviar</button>
+              <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Envíanos tu consulta">
+                Enviar
+              </button>
             </div>
           </form>
         </div>
@@ -57,10 +76,31 @@
     <p><a href="https://github.com/verito1312/web.git" target="_blank" rel="noopener">Ver sitio en GitHub Pages</a></p>
   </footer>
   <!-- scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
+    // Agregar la clase "fade-in" al cargar la página
+    document.addEventListener("DOMContentLoaded", function () {
       document.body.classList.add("fade-in");
     });
+
+    // Manejar la transición al hacer clic en un enlace
+    const links = document.querySelectorAll("a");
+    links.forEach(link => {
+      link.addEventListener("click", function (event) {
+        const href = this.getAttribute("href");
+        if (href && !href.startsWith("#") && !this.hasAttribute("target")) {
+          event.preventDefault();
+          document.body.classList.remove("fade-in");
+          setTimeout(() => {
+            window.location.href = href;
+          }, 500); // Tiempo de la transición (0.5s)
+        }
+      });
+    });
+
+    // Inicializar tooltips
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
   </script>
 
 </body>

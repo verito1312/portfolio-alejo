@@ -1,14 +1,15 @@
-@import 'variables';
-@import 'mixins';
-@import 'sobremi';
-@import 'proyectos';
-@import 'blog';
-@import 'presupuestos';
-@import 'contacto';
-@import 'base';
-@import 'layout';
-@import 'components';
-@import 'responsive';
+@use 'variables';
+@use 'mixins';
+@use 'sobremi';
+@use 'proyectos';
+@use 'blog';
+@use 'presupuestos';
+@use 'contacto';
+@use 'base';
+@use 'layout';
+@use 'components';
+@use 'responsive';
+@use 'animate.css';
 
 .bg-dark {
   background-color: $color-fondo !important;
@@ -29,10 +30,37 @@
   }
 }
 
+@mixin button-styles($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+@mixin box-shadow($color, $size) {
+  box-shadow: 0 0 $size $color;
+}
+
+.btn-cta {
+  @include button-styles(#252424, #fff);
+  border: 2px solid #fff;
+  @include mixins.box-shadow(#000, 6px);
+}
+
 .container {
-  max-width: $ancho-maximo;
+  max-width: variables.$ancho-maximo;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+.hero {
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: slideInFromLeft 1.5s ease-in-out;
+  }
 }
 
 @media (max-width: 768px) {

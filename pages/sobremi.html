@@ -5,32 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portafolio de Alejandro Tejera, Diseñador Industrial.">
   <title>Sobre mi - Alejandro Tejera</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
 <body>
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-container">
-      <a class="navbar-brand" href="../index.html">Home</a>
+      <a class="navbar-brand" href="../index.html" title="Inicio">
+        <i class="bi bi-house-door-fill"></i>
+      </a>
       <ul class="navbar-menu">
         <li><a href="./sobremi.html">Sobre mí</a></li>
         <li><a href="./proyectos.html">Proyectos</a></li>
         <li><a href="./blog.html">Blog</a></li>
-        <li><a href="./presupuesto.html">Presupuestos</a></li>
+        <li><a href="./presupuesto.html">Presupuesto</a></li>
         <li><a href="./contacto.html">Contacto</a></li>
       </ul>
     </div>
   </nav>
-
   <!-- Contenido principal -->
   <main>
     <!-- Sobre mí -->
     <section id="sobre-mi">
       <div class="container">
-        <h1>Sobre mí</h1>
+        <h1 class="animate__animated animate__bounce">Sobre mí</h1>
         <div class="about-me">
           <div class="about-text">
             <p>
-              Soy Diseñador Industrial de la Universidad de la República (Udelar), con énfasis en fabricación digital. Mi pasión por la innovación me llevó a especializarme en este campo, completando un máster en Fabricación Digital en el Fab Academy Paraguay.
+              Soy Diseñador Industrial de la Universidad de la República (Udelar), con énfasis en fabricación digital. 
+              Mi pasión por la innovación me llevó a especializarme en este campo, completando un máster en Fabricación Digital en el Fab Academy Paraguay.
+            </p>
+            <p>
               A lo largo de mi carrera, he trabajado en el desarrollo de productos y soluciones que combinan diseño, tecnología y procesos de manufactura avanzados.
               Mi enfoque interdisciplinario y dominio de herramientas digitales me permiten crear proyectos eficientes, funcionales y sostenibles. Actualmente trabajo como técnico diseñador industrial en Jetson Labs, Montevideo, Uruguay, donde realizo tareas de diseño y fabricación digital, así como la creación de prototipos y productos innovadores.
             </p>
@@ -38,6 +46,11 @@
           <div class="about-image">
             <img src="../img/aletejerapic.jpg" alt="Alejandro Tejera - Diseñador Industrial">
           </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="../docs/portfolio_alejandro_ tejera.pdf" class="btn btn-cta" download>
+            <i class="bi bi-file-earmark-pdf"></i> Descargar Portfolio
+          </a>
         </div>
       </div>
     </section>
@@ -51,9 +64,30 @@
 
 <!-- scripts -->
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  // Agrega la clase "fade-in" al cargar la página
+  document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.add("fade-in");
   });
+
+  // Maneja la transición al hacer clic en un enlace
+  const links = document.querySelectorAll("a");
+  links.forEach(link => {
+    link.addEventListener("click", function (event) {
+      const href = this.getAttribute("href");
+      console.log("Navegando a:", href); // Depuración
+      if (href && !href.startsWith("#") && !this.hasAttribute("target")) {
+        event.preventDefault();
+        document.body.classList.remove("fade-in");
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500); // Tiempo de la transición (0.5s)
+      }
+    });
+  });
+
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

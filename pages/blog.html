@@ -5,18 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portafolio de Alejandro Tejera, Diseñador Industrial.">
   <title>Blog - Alejandro Tejera</title>
-<link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
 
 <body>
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-container">
-      <a class="navbar-brand" href="../index.html">Home</a>
+      <a class="navbar-brand" href="../index.html" title="Inicio">
+        <i class="bi bi-house-door-fill"></i>
+      </a>
       <ul class="navbar-menu">
         <li><a href="./sobremi.html">Sobre mí</a></li>
         <li><a href="./proyectos.html">Proyectos</a></li>
         <li><a href="./blog.html">Blog</a></li>
-        <li><a href="./presupuesto.html">Presupuestos</a></li>
+        <li><a href="./presupuesto.html">Presupuesto</a></li>
         <li><a href="./contacto.html">Contacto</a></li>
       </ul>
     </div>
@@ -29,25 +36,28 @@
         <h1>Blog - Explorando el Diseño Industrial</h1>
 
         <!-- Artículo 1 -->
-        <div class="blog-article">
-          <div class="blog-image">
-            <img src="../img/INT.webp" alt="Diseño y tecnología">
+
+        <div class="project-article">
+          <div class="project-image">
+             <img src="../img/integration and tech.jpg" alt="Diseño y tecnología">
           </div>
-          <div class="blog-content">
+          <div class="project-content">
             <h5>Integración de Tecnología en el Diseño</h5>
             <p>La tecnología juega un papel crucial en la evolución del diseño industrial. Este artículo analiza herramientas como realidad aumentada, modelado 3D y su impacto en la innovación del producto.</p>
-            <a href="https://www.fuse-arch.com/architectural-design-technology/" class="btn">Ver más</a>
+            <a href="https://www.fuse-arch.com/architectural-design-technology/" class="btn btn-outline-light px-4 py-2">Ver más</a>
           </div>
         </div>
-        <!-- Artículo 2 -->
-        <div class="blog-article">
-          <div class="blog-image">
-            <img src="../img/Fabdig.jpg" alt="Fabricación digital">
+
+     <!-- Artículo 2 -->
+
+         <div class="project-article">
+          <div class="project-image">
+            <img src="../img/IMG_8732-2048x1152.png" alt="Fabricación digital">
           </div>
-          <div class="blog-content">
+          <div class="project-content">
             <h5>El Futuro de la Fabricación Digital</h5>
             <p>Con impresión 3D, corte láser y técnicas avanzadas, la fabricación digital redefine el diseño industrial. Exploramos casos reales y proyecciones a futuro.</p>
-            <a href="https://dropslab.com/2024/07/15/the-future-of-manufacturing-all-about-digital-factory/" class="btn">Ver más</a>
+            <a href="https://dropslab.com/2024/07/15/the-future-of-manufacturing-all-about-digital-factory/" class="btn btn-outline-light px-4 py-2">Ver más</a>
           </div>
         </div>
       </div>
@@ -60,10 +70,31 @@
     <p><a href="https://github.com/verito1312/web.git" target="_blank" rel="noopener">Ver sitio en GitHub Pages</a></p>
   </footer>
   <!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  // Agregar la clase "fade-in" al cargar la página
+  document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.add("fade-in");
   });
+
+  // Manejar la transición al hacer clic en un enlace
+  const links = document.querySelectorAll("a");
+  links.forEach(link => {
+    link.addEventListener("click", function (event) {
+      const href = this.getAttribute("href");
+      console.log("Navegando a:", href); // Depuración
+      if (href && !href.startsWith("#") && !this.hasAttribute("target")) {
+        event.preventDefault();
+        document.body.classList.remove("fade-in");
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500); // Tiempo de la transición (0.5s)
+      }
+    });
+  });
+
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 </script>
 </body>
 </html>
