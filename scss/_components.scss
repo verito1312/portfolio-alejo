@@ -1,11 +1,16 @@
+// Importar otros archivos SCSS
+@use 'mixins';
+@use 'variables';
+
 .navbar {
   width: 100%;
-  background-color: $color-navbar;
+  background-color: variables.$color-navbar; // Correcto
+  color: variables.$color-texto; // Correcto
   padding: 1rem 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 
   a {
-    color: $color-texto;
+    color: variables.$color-texto; // Correcto
     text-align: center;
     display: inline-block;
     font-weight: bold;
@@ -14,17 +19,17 @@
     transition: color 0.3s ease;
 
     &:hover {
-      color: $color-hover;
+      color: variables.$color-hover; // Asegúrate de que $color-hover esté definido en _variables.scss
     }
   }
 }
 
 .card {
   border: none;
-  border-radius: 8px;
-  background-color: $color-card;
-  color: #e0e0e0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: variables.$border-radius;
+  background-color: variables.$color-card;
+  color: variables.$color-texto; // Correcto
+  @include mixins.box-shadow(#000, 6px);
 
   .card-body {
     padding: 1rem;
@@ -50,4 +55,20 @@
   object-fit: cover;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+}
+
+.component {
+  color: variables.$color-texto; // Correcto
+  background-color: variables.$secondary-color; // Correcto
+}
+
+.header {
+  background-color: variables.$color-header; 
+  color: variables.$color-texto; // Correcto
+}
+
+.button {
+  background-color: variables.$primary-color;
+  color: variables.$color-texto; // Correcto
+  @include mixins.box-shadow(#000, 4px);
 }

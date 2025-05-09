@@ -1,13 +1,24 @@
-@mixin transition($properties...) {
-  transition: $properties 0.3s ease;
+@use 'variables';
+
+@mixin box-shadow($color, $size) {
+  box-shadow: 0 0 $size $color;
 }
 
 @mixin center-content {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-@mixin box-shadow($color, $size) {
-  box-shadow: 0 0 $size $color;
+@mixin button-styles($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: variables.$color-texto;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+@mixin transition($properties...) {
+  transition: $properties 0.3s ease;
 }

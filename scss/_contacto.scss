@@ -1,7 +1,12 @@
+@use 'variables';
+
 #contacto {
+  background-color: variables.$color-fondo;
+  color: variables.$color-texto;
+
   .contacto-section {
     background-color: $color-fondo; // Usa la variable de fondo oscuro
-    color: $color-texto;
+    color: variables.$color-texto;
 
     h2 {
       font-size: 2rem;
@@ -23,13 +28,13 @@
 
       form {
         .form-label {
-          color: $color-texto;
+          color: variables.$color-texto;
           font-weight: bold;
         }
 
         .form-control {
           background-color: $color-fondo;
-          color: $color-texto;
+          color: variables.$color-texto;
           border: 1px solid $color-borde;
           border-radius: 5px;
           padding: 0.5rem;
@@ -41,7 +46,7 @@
         }
 
         small {
-          color: $color-texto;
+          color: variables.$color-texto;
           font-size: 0.9rem;
         }
       }
@@ -50,7 +55,7 @@
     .contacto-form {
       .form-control {
         background-color: $color-fondo; // Fondo oscuro
-        color: $color-texto; // Texto claro
+        color: variables.$color-texto;
         border: 1px solid lighten($color-fondo, 10%); // Bordes claros
         border-radius: $border-radius;
 
@@ -62,7 +67,7 @@
 
       .btn {
         background-color: transparent;
-        color: $color-texto;
+        color: variables.$color-texto;
         border: 1px solid $color-texto;
         padding: 0.5rem 1.5rem;
         border-radius: $border-radius;
@@ -75,4 +80,8 @@
       }
     }
   }
+}
+
+.bg-dark {
+  background-color: variables.$secondary-color !important; // Usa el prefijo 'variables.'
 }

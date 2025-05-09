@@ -1,18 +1,29 @@
+@use 'variables';
+@use 'mixins';
+@use 'responsive';
+
+.sobre-mi {
+  max-width: variables.$ancho-maximo; // Usa el prefijo 'variables.'
+  margin: 0 auto;
+  background-color: variables.$primary-color; // Usa el prefijo 'variables.'
+  color: variables.$text-color; // Usa el prefijo 'variables.'
+}
+
 #sobre-mi {
   .content {
-    max-width: $ancho-maximo;
+    max-width: variables.$ancho-maximo;
     margin: 0 auto;
     padding: 0 1rem;
   }
 
   .about-me {
-    @include center-content;
+    @include mixins.center-content;
     gap: 2rem;
   }
 
   .about-text {
     flex: 1;
-    color: $color-texto;
+    color: variables.$color-texto;
   }
 
   .about-image img {
@@ -22,4 +33,8 @@
     border-radius: 5px;
     object-fit: cover;
   }
+}
+
+.bg-dark {
+  background-color: variables.$secondary-color !important; // Usa el prefijo 'variables.'
 }

@@ -1,6 +1,17 @@
+@use 'variables';
+@use 'blog';
+@use 'sobremi';
+@use 'mixins';
+@use 'presupuestos';
+@use 'contacto';
+@use 'layout';
+@use 'components';
+@use 'responsive';
+
+
 body {
-  background-color: $color-fondo;
-  color: $color-texto;
+  background-color: variables.$color-fondo;
+  color: variables.$color-texto;
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
@@ -16,7 +27,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: $color-texto;
+  color: variables.$color-texto;
   font-weight: bold;
   text-align: center;
   margin-bottom: 1rem;

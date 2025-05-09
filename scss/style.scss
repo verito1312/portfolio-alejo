@@ -1,46 +1,44 @@
+// Importar variables primero
 @use 'variables';
+
+// Importar mixins
 @use 'mixins';
+
+// Importar estilos base
+@use 'base';
+
+// Importar estilos de secciones específicas
 @use 'sobremi';
 @use 'proyectos';
 @use 'blog';
 @use 'presupuestos';
 @use 'contacto';
-@use 'base';
+
+// Importar estilos de layout y componentes
 @use 'layout';
 @use 'components';
+
+// Importar estilos responsivos
 @use 'responsive';
-@use 'animate.css';
 
 .bg-dark {
-  background-color: $color-fondo !important;
+  background-color: variables.$secondary-color !important;
 }
 
 .text-light {
-  color: $color-texto !important;
+  color: variables.$color-texto !important;
 }
 
 .btn-outline-light {
-  color: $color-texto;
-  border: 1px solid $color-borde;
-  @include transition(background-color, color);
+  color: variables.$color-texto;
+  border: 1px solid variables.$color-borde;
+  @include mixins.transition(background-color, color);
 
   &:hover {
-    background-color: $color-texto;
+    background-color: variables.transition($color-borde, 0.1);
+    color: variables.$color-texto;
     color: #000;
   }
-}
-
-@mixin button-styles($bg-color, $text-color) {
-  background-color: $bg-color;
-  color: $text-color;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-@mixin box-shadow($color, $size) {
-  box-shadow: 0 0 $size $color;
 }
 
 .btn-cta {
@@ -50,7 +48,7 @@
 }
 
 .container {
-  max-width: variables.$ancho-maximo;
+  max-width: variables.$ancho-maximo; // Usa el prefijo 'variables.'
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -61,6 +59,11 @@
     margin-bottom: 1rem;
     animation: slideInFromLeft 1.5s ease-in-out;
   }
+}
+
+.sobre-mi {
+  max-width: variables.$ancho-maximo; // Usa el prefijo 'variables.'
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {

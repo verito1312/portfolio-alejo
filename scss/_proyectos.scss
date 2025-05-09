@@ -1,3 +1,10 @@
+@use 'variables';
+@use 'mixins';
+@use 'layout';
+@use 'components';
+@use 'responsive';
+
+
 #proyectos {
   background-color: $secondary-color;
   color: $text-color;
@@ -35,14 +42,24 @@
     .project-title {
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
-      color: $color-texto;
+      color: variables.$color-texto;
     }
 
     .project-text {
       font-size: 1rem;
       margin-bottom: 1rem;
-      color: $color-texto;
+      color: variables.$color-texto;
       line-height: 1.5;
     }
   }
+}
+
+.proyecto {
+  background-color: variables.$secondary-color; // Usa el prefijo 'variables.'
+  color: variables.$color-texto;
+  border-radius: variables.$border-radius;
+}
+
+.bg-dark {
+  background-color: variables.$secondary-color !important; // Usa el prefijo 'variables.'
 }

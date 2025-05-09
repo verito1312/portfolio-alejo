@@ -1,10 +1,11 @@
 /* Error: Undefined variable.
  *   ,
- * 3 |     max-width: $ancho-maximo;
- *   |                ^^^^^^^^^^^^^
+ * 9 |   color: variables.$text-color; // Usa el prefijo 'variables.'
+ *   |          ^^^^^^^^^^^^^^^^^^^^^
  *   '
- *   scss\_sobremi.scss 3:16  @use
- *   scss\style.scss 3:1      root stylesheet */
+ *   scss\_sobremi.scss 9:10  @use
+ *   scss\_base.scss 3:1      @use
+ *   scss\style.scss 8:1      root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -14,5 +15,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 3 \2502      max-width: $ancho-maximo;\a   \2502                 ^^^^^^^^^^^^^\a   \2575 \a   scss\\_sobremi.scss 3:16  @use\a   scss\\style.scss 3:1      root stylesheet";
+  content: "Error: Undefined variable.\a   \2577 \a 9 \2502    color: variables.$text-color; // Usa el prefijo 'variables.'\a   \2502           ^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   scss\\_sobremi.scss 9:10  @use\a   scss\\_base.scss 3:1      @use\a   scss\\style.scss 8:1      root stylesheet";
 }

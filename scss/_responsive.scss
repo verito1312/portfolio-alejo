@@ -1,3 +1,5 @@
+@use 'variables';
+
 @media (max-width: 768px) {
   #sobre-mi .col-md-6,
   #proyectos .col-md-4,
@@ -9,5 +11,15 @@
   #proyectos .row,
   #blog .row {
     flex-direction: column;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-img {
+    width: 100%;
+    max-width: 300px;
   }
 }
