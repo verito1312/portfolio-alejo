@@ -1,9 +1,8 @@
 @use 'variables';
+@use 'sass:color';
 
 @mixin box-shadow($color, $size) {
-  box-shadow: 0 0 $size $color;
 }
-
 
 @mixin center-content {
   display: flex;
@@ -28,5 +27,11 @@
   @include center-content;
   gap: 2rem;
   padding: 2rem 0;
-    background-color: variables.$secondary-color;
+  background-color: variables.$secondary-color;
+}
+
+.btn-outline-light {
+  &:hover {
+    background-color: color.adjust(variables.$color-borde, $lightness: 10%);
   }
+}

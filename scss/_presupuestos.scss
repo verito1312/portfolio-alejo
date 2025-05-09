@@ -3,32 +3,44 @@
 @use 'mixins';
 
 #presupuestos {
-  background-color: variables.$secondary-color; // Usa el prefijo 'variables.'
-  color: variables.$color-texto; // Usa el prefijo 'variables.'
+  background-color: variables.$secondary-color; // Fondo de la sección
+  color: variables.$color-texto; // Color del texto principal
 
   .form-control {
-    background-color: variables.$secondary-color;
-    color: variables.$color-texto;
-    border: 1px solid color.adjust(variables.$secondary-color, $lightness: 10%);
-    border-radius: variables.$border-radius;
+    background-color: transparent; // Fondo transparente para inputs
+    color: variables.$color-texto; // Texto blanco o claro
+    border: 1px solid variables.$color-texto; // Bordes blancos
+    border-radius: variables.$border-radius; // Bordes redondeados
+    padding: 0.5rem;
 
     &:focus {
-      @include mixins.box-shadow(variables.$primary-color, 10px); 
-    
+      outline: none;
+      border-color: variables.$primary-color; // Cambia el color del borde al enfocar
+      @include mixins.box-shadow(variables.$primary-color, 10px); // Sombra al enfocar
     }
   }
 
+  .form-label {
+    color: variables.$color-texto; // Texto blanco o claro para etiquetas
+    font-weight: bold;
+  }
+
+  .form-text {
+    color: color.adjust(variables.$color-texto, $lightness: 50%); // Texto muted en gris claro
+    font-size: 0.9rem;
+  }
+
   .btn {
-    background-color: transparent;
-    color: variables.$color-texto;
-    border: 1px solid variables.$color-texto;
+    background-color: transparent; // Fondo transparente
+    color: variables.$color-texto; // Texto blanco
+    border: 1px solid variables.$color-texto; // Bordes blancos
     padding: 0.5rem 1.5rem;
-    border-radius: variables.$border-radius;
+    border-radius: variables.$border-radius; // Bordes redondeados
     transition: background-color 0.3s ease, color 0.3s ease;
 
     &:hover {
-      background-color: variables.$color-texto;
-      color: variables.$background-color;
+      background-color: variables.$color-texto; // Fondo blanco al hacer hover
+      color: variables.$primary-color; // Texto negro al hacer hover
     }
   }
 }

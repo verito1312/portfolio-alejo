@@ -5,25 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portafolio de Alejandro Tejera, Diseñador Industrial.">
   <title>Presupuesto - Alejandro Tejera</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../dist/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar-container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
       <a class="navbar-brand" href="../index.html" title="Inicio">
         <i class="bi bi-house-door-fill"></i>
       </a>
-      <ul class="navbar-menu">
-        <li><a href="./sobremi.html">Sobre mí</a></li>
-        <li><a href="./proyectos.html">Proyectos</a></li>
-        <li><a href="./blog.html">Blog</a></li>
-        <li><a href="./presupuesto.html">Presupuesto</a></li>
-        <li><a href="./contacto.html">Contacto</a></li>
-      </ul>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="./sobremi.html">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="./proyectos.html">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="./blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="./presupuesto.html">Presupuesto</a></li>
+          <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
@@ -40,8 +45,6 @@
         </div>
         <div class="custom-card">
           <form class="row g-3" enctype="multipart/form-data">
-
-
             <!-- Nombre -->
             <div class="col-12">
               <label for="nombre" class="form-label">Nombre</label>
@@ -51,7 +54,7 @@
             <div class="col-12">
               <label for="correo" class="form-label">Correo electrónico</label>
               <input type="email" name="correo" id="correo" class="form-control" placeholder="Tu correo electrónico" required>
-              <small class="text-muted">Por favor, introduce un correo válido.</small>
+              <small class="form-text">Por favor, introduce un correo válido.</small>
             </div>
             <!-- Teléfono -->
             <div class="col-12">
@@ -62,7 +65,7 @@
             <div class="col-12">
               <label for="archivo" class="form-label">Adjuntar archivo</label>
               <input type="file" name="archivo" id="archivo" class="form-control" accept=".pdf,.doc,.docx,.jpg,.png">
-              <small class="text-muted">Formatos permitidos: PDF, DOC, DOCX, JPG, PNG.</small>
+              <small class="form-text">Formatos permitidos: PDF, DOC, DOCX, JPG, PNG.</small>
             </div>
             <!-- Descripción -->
             <div class="col-12">
@@ -71,7 +74,7 @@
             </div>
             <!-- Botón -->
             <div class="col-12 text-center">
-              <button type="submit" class="btn btn-outline-light px-4 py-2">Solicitar Presupuesto</button>
+              <button type="submit" class="btn">Solicitar Presupuesto</button>
             </div>
           </form>
         </div>
@@ -111,6 +114,14 @@
     // Inicializar tooltips
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+    // Agregar animación a los encabezados
+    document.addEventListener("DOMContentLoaded", function () {
+      const headings = document.querySelectorAll("h1");
+      headings.forEach(heading => {
+        heading.classList.add("animate__animated", "animate__bounce");
+      });
+    });
   </script>
 </body>
 </html>

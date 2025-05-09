@@ -29,15 +29,22 @@
     }
 
     .btn {
+      display: block; // Hace que el botón ocupe todo el ancho del formulario
+      width: 100%; // Ajusta el ancho al contenedor
       background-color: variables.$primary-color;
       color: variables.$color-texto;
       border: none;
-      padding: 0.5rem 1rem;
+      padding: 1rem 2rem; // Botón más grande
       border-radius: variables.$border-radius;
-      transition: background-color 0.3s ease;
+      font-size: 1.2rem; // Texto más grande
+      font-weight: bold;
+      text-align: center;
+      transition: background-color 0.3s ease, color 0.3s ease;
 
       &:hover {
-        background-color: variables.$color-hover;
+        background-color: variables.$color-hover; // Fondo blanco al hacer hover
+        color: variables.$primary-color; // Texto negro al hacer hover
+        transform: scale(1.05); // Aumenta ligeramente el tamaño del botón
       }
     }
   }

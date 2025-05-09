@@ -1,14 +1,52 @@
-.navbar {
-  background-color: variables.$color-navbar;
-  color: variables.$color-navbar;
-  @include box-shadow(#000, 6px);
+@use 'variables';
+@use 'mixins';
 
-  a {
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: variables.$color-navbar;
+  color: variables.$color-texto;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .navbar-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+
+    li {
+      a {
+        color: variables.$color-texto;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: variables.$color-hover;
+          color: variables.$color-navbar;
+        }
+      }
+    }
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
     color: variables.$color-texto;
-    @include transition(color, 0.3s);
+    text-decoration: none;
 
     &:hover {
-      color: variables.$link-hover-color;
+      color: variables.$color-hover;
     }
   }
 }

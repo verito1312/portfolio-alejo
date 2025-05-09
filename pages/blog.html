@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portafolio de Alejandro Tejera, Diseñador Industrial.">
   <title>Blog - Alejandro Tejera</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../dist/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -14,18 +14,23 @@
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar-container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
       <a class="navbar-brand" href="../index.html" title="Inicio">
         <i class="bi bi-house-door-fill"></i>
       </a>
-      <ul class="navbar-menu">
-        <li><a href="./sobremi.html">Sobre mí</a></li>
-        <li><a href="./proyectos.html">Proyectos</a></li>
-        <li><a href="./blog.html">Blog</a></li>
-        <li><a href="./presupuesto.html">Presupuesto</a></li>
-        <li><a href="./contacto.html">Contacto</a></li>
-      </ul>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="./sobremi.html">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="./proyectos.html">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="./blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="./presupuesto.html">Presupuesto</a></li>
+          <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
@@ -34,30 +39,25 @@
     <section id="blog">
       <div class="container">
         <h1>Blog - Explorando el Diseño Industrial</h1>
-
-        <!-- Artículo 1 -->
-
-        <div class="project-article">
-          <div class="project-image">
-             <img src="../img/integration and tech.jpg" alt="Diseño y tecnología">
+        <div class="blog-container">
+          <!-- Artículo 1 -->
+          <div class="blog-card">
+            <img src="../img/integration and tech.jpg" alt="Diseño y tecnología" class="blog-image">
+            <div class="blog-content">
+              <h5>Integración de Tecnología en el Diseño</h5>
+              <p>La tecnología juega un papel crucial en la evolución del diseño industrial. Este artículo analiza herramientas como realidad aumentada, modelado 3D y su impacto en la innovación del producto.</p>
+              <a href="https://www.fuse-arch.com/architectural-design-technology/" class="btn btn-outline-light">Ver más</a>
+            </div>
           </div>
-          <div class="project-content">
-            <h5>Integración de Tecnología en el Diseño</h5>
-            <p>La tecnología juega un papel crucial en la evolución del diseño industrial. Este artículo analiza herramientas como realidad aumentada, modelado 3D y su impacto en la innovación del producto.</p>
-            <a href="https://www.fuse-arch.com/architectural-design-technology/" class="btn btn-outline-light px-4 py-2">Ver más</a>
-          </div>
-        </div>
 
-     <!-- Artículo 2 -->
-
-         <div class="project-article">
-          <div class="project-image">
-            <img src="../img/IMG_8732-2048x1152.png" alt="Fabricación digital">
-          </div>
-          <div class="project-content">
-            <h5>El Futuro de la Fabricación Digital</h5>
-            <p>Con impresión 3D, corte láser y técnicas avanzadas, la fabricación digital redefine el diseño industrial. Exploramos casos reales y proyecciones a futuro.</p>
-            <a href="https://dropslab.com/2024/07/15/the-future-of-manufacturing-all-about-digital-factory/" class="btn btn-outline-light px-4 py-2">Ver más</a>
+          <!-- Artículo 2 -->
+          <div class="blog-card">
+            <img src="../img/IMG_8732-2048x1152.png" alt="Fabricación digital" class="blog-image">
+            <div class="blog-content">
+              <h5>El Futuro de la Fabricación Digital</h5>
+              <p>Con impresión 3D, corte láser y técnicas avanzadas, la fabricación digital redefine el diseño industrial. Exploramos casos reales y proyecciones a futuro.</p>
+              <a href="https://dropslab.com/2024/07/15/the-future-of-manufacturing-all-about-digital-factory/" class="btn btn-outline-light">Ver más</a>
+            </div>
           </div>
         </div>
       </div>
@@ -95,6 +95,14 @@
 
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
   const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+  // Agregar animación a los encabezados
+  document.addEventListener("DOMContentLoaded", function () {
+    const headings = document.querySelectorAll("h1");
+    headings.forEach(heading => {
+      heading.classList.add("animate__animated", "animate__bounce");
+    });
+  });
 </script>
 </body>
 </html>

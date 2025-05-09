@@ -6,24 +6,29 @@
   <meta name="description" content="Portafolio de Alejandro Tejera, Diseñador Industrial.">
   <title>Sobre mi - Alejandro Tejera</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../dist/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar-container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
       <a class="navbar-brand" href="../index.html" title="Inicio">
         <i class="bi bi-house-door-fill"></i>
       </a>
-      <ul class="navbar-menu">
-        <li><a href="./sobremi.html">Sobre mí</a></li>
-        <li><a href="./proyectos.html">Proyectos</a></li>
-        <li><a href="./blog.html">Blog</a></li>
-        <li><a href="./presupuesto.html">Presupuesto</a></li>
-        <li><a href="./contacto.html">Contacto</a></li>
-      </ul>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="./sobremi.html">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="./proyectos.html">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="./blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="./presupuesto.html">Presupuesto</a></li>
+          <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
   <!-- Contenido principal -->
@@ -47,9 +52,9 @@
             <img src="../img/aletejerapic.jpg" alt="Alejandro Tejera - Diseñador Industrial">
           </div>
         </div>
-        <div class="text-center mt-4">
-          <a href="../docs/portfolio_alejandro_ tejera.pdf" class="btn btn-cta" download>
-            <i class="bi bi-file-earmark-pdf"></i> Descargar Portfolio
+        <div class="text-center">
+          <a href="../docs/portfolio.pdf" class="btn btn-cta" download>
+            <i class="bi bi-download"></i> Descargar Portfolio
           </a>
         </div>
       </div>
@@ -87,6 +92,14 @@
 
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
   const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+  // Agrega animación a los encabezados
+  document.addEventListener("DOMContentLoaded", function () {
+    const headings = document.querySelectorAll("h1");
+    headings.forEach(heading => {
+      heading.classList.add("animate__animated", "animate__bounce");
+    });
+  });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
