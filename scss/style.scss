@@ -75,7 +75,7 @@ body {
   &:hover {
     background-color: variables.$color-hover; // Fondo blanco al hacer hover
     color: variables.$primary-color; // Texto del color principal al hacer hover
-    transform: scale(1.05); // Aumenta ligeramente el tamaño del botón
+    transform: scale(1.05); // Aumenta apenas el tamaño del botón
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); // Sombra más intensa al hacer hover
   }
 
@@ -103,16 +103,7 @@ body {
   margin: 0 auto;
 }
 
-#sobre-mi {
-  .about-me {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem; // Espaciado entre el texto y la imagen
-  }
-
   .about-text {
-    flex: 1;
     color: variables.$color-texto;
   }
 
