@@ -10,26 +10,50 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
  
   <style>
-   
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      animation: slideInFromLeft 1.5s ease-in-out;
+    }
+    .hero-img {
+      width: 100%;
+      max-width: 300px;
+    }
+    .btn-cta {
+      background-color: #252424;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid #fff;
+      box-shadow: 0 0 6px #000;
+    }
   </style>
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar-container">
-      <a class="navbar-brand" href="../index.html" title="Inicio">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html" title="Inicio">
         <i class="bi bi-house-door-fill"></i>
       </a>
-      <ul class="navbar-menu">
-        <li><a href="./pages/sobremi.html">Sobre mí</a></li>
-        <li><a href="./pages/proyectos.html">Proyectos</a></li>
-        <li><a href="./pages/blog.html">Blog</a></li>
-        <li><a href="./pages/presupuesto.html">Presupuesto</a></li>
-        <li><a href="./pages/contacto.html">Contacto</a></li>
-      </ul>
-</div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="./pages/sobremi.html">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="./pages/proyectos.html">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="./pages/blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="./pages/presupuesto.html">Presupuesto</a></li>
+          <li class="nav-item"><a class="nav-link" href="./pages/contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
   <!-- Contenido principal -->
@@ -40,7 +64,7 @@
         <h1 class="animate__animated animate__bounce">Bienvenido a mi Portafolio</h1>
         <img src="./img/alejotejera.png" alt="Alejandro Tejera" class="hero-img animate__animated animate__fadeIn">
         <p class="lead">Diseño Industrial | Innovación | Creatividad</p>
-        <a href="./pages/sobremi.html" class="btn animate__animated animate__pulse animate__infinite">Sobre mí</a>
+        <a href="./pages/sobremi.html" class="btn btn-cta animate__animated animate__pulse animate__infinite">Sobre mí</a>
       </div>
     </header>
 
@@ -50,65 +74,57 @@
     </div>
 
     <!-- Sección de Proyectos -->
-    <section id="proyectos" class="projects">
+    <section id="proyectos">
       <div class="container">
         <h2 class="section-title">Proyectos Destacados</h2>
-        <!-- Proyecto 1 -->
-        <div class="project-article">
-          <div class="project-image">
-            <img src="./img/sunguay20.jpg" alt="Dispositivo SUNguay 2.0">
+        <div class="projects-grid">
+          <!-- Proyecto 1 -->
+          <div class="project-card">
+            <img src="./img/sunguay20.jpg" alt="Dispositivo SUNguay 2.0" class="project-img">
+            <div class="project-content">
+              <h5>The SUNguay 2.0</h5>
+              <p>Dispositivo portátil para calentar agua, controlado por Bluetooth con app Android. Ideal para preparar mate con temperatura precisa.</p>
+            </div>
           </div>
-          <div class="project-content">
-            <h5>The SUNguay 2.0</h5>
-            <p>Dispositivo portátil para calentar agua, controlado por Bluetooth con app Android. Ideal para preparar mate con temperatura precisa.</p>
-          </div>
-        </div>
-        <!-- Proyecto 2 -->
-        <div class="project-article">
-          <div class="project-image">
-            <img src="./img/thebox1.jpg" alt="Bolsa de madera para SUNguay">
-          </div>
-          <div class="project-content">
-            <h5>Wooden pouch</h5>
-            <p>Bolsa de madera diseñada para guardar el SUNGuay 2.0 cuando no está en uso. Fabricada con madera contrachapada de 4mm y cierre magnético.</p>
+          <!-- Proyecto 2 -->
+          <div class="project-card">
+            <img src="./img/thebox1.jpg" alt="Bolsa de madera para SUNguay" class="project-img">
+            <div class="project-content">
+              <h5>Wooden pouch</h5>
+              <p>Bolsa de madera diseñada para guardar el SUNGuay 2.0 cuando no está en uso. Fabricada con madera contrachapada de 4mm y cierre magnético.</p>
+            </div>
           </div>
         </div>
-        <!-- Botón para ver todos los proyectos -->
-        <div class="text-center">
-          <a href="./pages/proyectos.html" class="btn btn-outline-light px-4 py-2">Ver proyectos</a>
+        <!-- Botón Ver más proyectos -->
+        <div class="text-center mt-4">
+          <a href="./pages/proyectos.html" class="btn btn-outline-light">Ver más proyectos</a>
         </div>
       </div>
     </section>
 
     <!-- Blog -->
-     
     <section id="blog">
       <div class="container">
-        <h1>Blog - Explorando el Diseño Industrial</h1>
-
-        <!-- Artículo 1 -->
-
-        <div class="project-article">
-          <div class="project-image">
-             <img src="img/integration and tech.jpg" alt="Diseño y tecnología">
+        <h2 class="section-title">Blog - Explorando el Diseño Industrial</h2>
+        <div class="blog-container">
+          <!-- Artículo 1 -->
+          <div class="blog-card">
+            <img src="./img/integration and tech.jpg" alt="Diseño y tecnología" class="blog-image">
+            <div class="blog-content">
+              <h5>Integración de Tecnología en el Diseño</h5>
+              <p>La tecnología juega un papel crucial en la evolución del diseño industrial. Este artículo analiza herramientas como realidad aumentada, modelado 3D y su impacto en la innovación del producto.</p>
+              <a href="https://www.fuse-arch.com/architectural-design-technology/" class="btn btn-outline-light">Ver más</a>
+            </div>
           </div>
-          <div class="project-content">
-            <h5>Integración de Tecnología en el Diseño</h5>
-            <p>La tecnología juega un papel crucial en la evolución del diseño industrial. Este artículo analiza herramientas como realidad aumentada, modelado 3D y su impacto en la innovación del producto.</p>
-            <a href="https://www.fuse-arch.com/architectural-design-technology/" class="btn btn-outline-light px-4 py-2">Ver más</a>
+          <!-- Artículo 2 -->
+          <div class="blog-card">
+            <img src="./img/IMG_8732-2048x1152.png" alt="Fabricación digital" class="blog-image">
+            <div class="blog-content">
+              <h5>El Futuro de la Fabricación Digital</h5>
+              <p>Con impresión 3D, corte láser y técnicas avanzadas, la fabricación digital redefine el diseño industrial. Exploramos casos reales y proyecciones a futuro.</p>
+              <a href="https://dropslab.com/2024/07/15/the-future-of-manufacturing-all-about-digital-factory/" class="btn btn-outline-light">Ver más</a>
+            </div>
           </div>
-        </div>
-
-     <!-- Artículo 2 -->
-
-         <div class="project-article">
-          <div class="project-image">
-            <img src="img/IMG_8732-2048x1152.png" alt="Fabricación digital">
-          </div>
-          <div class="project-content">
-            <h5>El Futuro de la Fabricación Digital</h5>
-            <p>Con impresión 3D, corte láser y técnicas avanzadas, la fabricación digital redefine el diseño industrial. Exploramos casos reales y proyecciones a futuro.</p>
-            <a href="https://dropslab.com/2024/07/15/the-future-of-manufacturing-all-about-digital-factory/" class="btn btn-outline-light px-4 py-2">Ver más</a>
         </div>
       </div>
     </section>
@@ -152,6 +168,14 @@
       .then(data => {
         document.getElementById("navbar-placeholder").innerHTML = data;
       });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const headings = document.querySelectorAll("h1");
+    headings.forEach(heading => {
+      heading.classList.add("animate__animated", "animate__bounce");
+    });
   });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
