@@ -5,8 +5,8 @@
 .sobre-mi {
   max-width: variables.$ancho-maximo; // Usa el prefijo 'variables.'
   margin: 0 auto;
-  background-color: variables.$primary-color; // Usa el prefijo 'variables.'
-  color: variables.$text-color; // Usa el prefijo 'variables.'
+  background-color: variables.$primary-color; 
+  color: variables.$color-texto; 
 }
 
 #sobre-mi {

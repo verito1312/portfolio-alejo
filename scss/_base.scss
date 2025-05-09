@@ -1,16 +1,6 @@
 @use 'variables';
-@use 'blog';
-@use 'sobremi';
-@use 'mixins';
-@use 'presupuestos';
-@use 'contacto';
-@use 'layout';
-@use 'components';
-@use 'responsive';
-
 
 body {
-  background-color: variables.$color-fondo;
   color: variables.$color-texto;
   font-family: 'Open Sans', sans-serif;
   margin: 0;
@@ -18,11 +8,11 @@ body {
 }
 
 a {
-  color: $color-enlace;
+  color: variables.$color-enlace; // Usa el prefijo 'variables.'
   text-decoration: none;
 
   &:hover {
-    color: $color-enlace-hover;
+    color: variables.$color-enlace-hover; // Usa el prefijo 'variables.'
   }
 }
 

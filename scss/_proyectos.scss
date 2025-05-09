@@ -4,15 +4,14 @@
 @use 'components';
 @use 'responsive';
 
-
 #proyectos {
-  background-color: $secondary-color;
-  color: $text-color;
+  background-color: variables.$secondary-color;
+  color: variables.$color-texto;
 
   .card {
-    background-color: $secondary-color;
-    color: $text-color;
-    border-radius: $border-radius;
+    background-color: variables.$secondary-color;
+    color: variables.$color-texto;
+    border-radius: variables.$border-radius;
   }
 
   .projects-grid {
@@ -22,7 +21,7 @@
   }
 
   .project-card {
-    background-color: $color-fondo;
+    background-color: variables.$color-fondo;
     border-radius: 5px;
     overflow: hidden;
     display: flex;
@@ -62,4 +61,43 @@
 
 .bg-dark {
   background-color: variables.$secondary-color !important; // Usa el prefijo 'variables.'
+}
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+  #proyectos .projects-grid {
+    grid-template-columns: repeat(2, 1fr); // 2 columnas en pantallas medianas
+    gap: 1rem; // Reduce el espaciado
+  }
+
+  #proyectos .project-card {
+    padding: 0.75rem;
+  }
+
+  #proyectos .project-title {
+    font-size: 1.25rem; // Reduce el tamaño del título
+  }
+
+  #proyectos .project-text {
+    font-size: 0.9rem; // Reduce el tamaño del texto
+  }
+}
+
+@media (max-width: 768px) {
+  #proyectos .projects-grid {
+    grid-template-columns: 1fr; // 1 columna en pantallas pequeñas
+    gap: 0.75rem; // Reduce aún más el espaciado
+  }
+
+  #proyectos .project-card {
+    padding: 0.5rem;
+  }
+
+  #proyectos .project-title {
+    font-size: 1rem; // Reduce aún más el tamaño del título
+  }
+
+  #proyectos .project-text {
+    font-size: 0.85rem; // Reduce aún más el tamaño del texto
+  }
 }

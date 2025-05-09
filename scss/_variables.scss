@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // Variables globales
 $secondary-color: #f0f0f0; // Define primero $secondary-color
 $background-color: $secondary-color;
@@ -5,7 +7,7 @@ $primary-color: #252424;
 $border-radius: 5px;
 $ancho-maximo: 1200px;
 $color-fondo: #121212;
-$color-header: #252424;
+$color-header: #f5f5f5; 
 $color-borde: #cccccc;
 $font-size-large: 1.5rem;
 $font-size-base: 1rem;
@@ -14,5 +16,12 @@ $color-navbar: #252424;
 $color-hover: #acacac; // Color para hover
 $color-card: #2c2c2c; // Color para las tarjetas
 $color-texto: #e0e0e0; // Color del texto
+$link-hover-color: #535050; // Color del texto al pasar el mouse
+$color-enlace: #0465c7; // Color de los enlaces
+$color-enlace-hover: #00bfff; // Color de los enlaces al pasar el mouse
+
+// Ajuste de color usando `color.adjust`
+$background-color: color.adjust($color-borde, $lightness: 10%);
+
 
 

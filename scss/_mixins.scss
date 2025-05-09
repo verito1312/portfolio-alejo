@@ -4,15 +4,16 @@
   box-shadow: 0 0 $size $color;
 }
 
+
 @mixin center-content {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-@mixin button-styles($bg-color, $text-color) {
+@mixin button-styles($bg-color, $color-texto) {
   background-color: $bg-color;
-  color: variables.$color-texto;
+  color: $color-texto;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   text-decoration: none;
@@ -22,3 +23,10 @@
 @mixin transition($properties...) {
   transition: $properties 0.3s ease;
 }
+
+.some-class {
+  @include center-content;
+  gap: 2rem;
+  padding: 2rem 0;
+    background-color: variables.$secondary-color;
+  }
