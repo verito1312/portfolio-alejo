@@ -29,16 +29,30 @@ $color-texto: #e0e0e0;
 $color-borde: #cccccc;
 $ancho-maximo: 1200px;
 
+html, body {
+  height: 100%;
+  min-height: 100vh;
+}
+
 body {
-  background-image: url('../img/background_img.jpg'); // Ruta relativa a la imagen
-  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-attachment: fixed; /* Fija la imagen al fondo */
-  background-position: center; /* Centra la imagen */
-  color: variables.$color-texto; /* Mantén el color del texto */
-  font-family: 'Open Sans', sans-serif;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+  background: #000 !important;
+  color: #e0e0e0;
+  text-align: center;
+  padding: 0.4rem 0 0.2rem 0;
+  font-size: 0.9rem;
+  width: 100%;
+  border-top: 1px solid #222;
 }
 
 .bg-dark {
@@ -57,19 +71,18 @@ body {
   &:hover {
     background-color: color.adjust(variables.$color-borde, $lightness: 10%);
     color: variables.$color-texto;
+  }
 }
 
 .btn-cta {
-  background-color: variables.$primary-color; // Color de fondo principal
-  color: variables.$color-texto; // Color del texto
-  padding: 0.75rem 1.5rem; // Tamaño del botón
-  border-radius: variables.$border-radius; // Bordes redondeados
+  background-color: #252424;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
   text-decoration: none;
-  font-size: 1rem; // Tamaño del texto
-  font-weight: bold;
-  border: 2px solid variables.$primary-color; // Borde del mismo color que el fondo
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Sombra para destacar el botón
   transition: all 0.3s ease;
+  border: 2px solid #fff;
+  box-shadow: 0 0 6px #000;
 
   &:hover {
     background-color: variables.$color-hover; // Fondo blanco al hacer hover
@@ -89,18 +102,32 @@ body {
   padding: 0 1rem;
 }
 
+.container-sm {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .hero {
   h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     animation: slideInFromLeft 1.5s ease-in-out;
   }
+   .hero-img {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 500px;
 }
 
 .sobre-mi {
   max-width: variables.$ancho-maximo; // Usa el prefijo 'variables.'
   margin: 0 auto;
-}
 
   .about-text {
     color: variables.$color-texto;
@@ -140,9 +167,35 @@ body {
 .card {
   border: none;
   border-radius: 5px;
-  background-color: variables.$color-card;
   color: variables.$color-texto;
   @include mixins.box-shadow(#000, 6px);
+}
+
+.card,
+.blog-card,
+.project-card {
+  background-color: transparent !important;
+  box-shadow: none;
+}
+
+.carousel-caption {
+  background: transparent !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+}
+
+#sobre-mi .card .row {
+  min-height: 350px; 
+}
+
+#sobre-mi .card-body {
+  height: 100%;
+}
+
+#sobre-mi .object-fit-cover {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
 }
 
 #blog {
@@ -278,6 +331,14 @@ body {
   }
 }
 
+.carousel-img {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 h1 {
   animation: bounceIn 1.5s ease-in-out; // Aplica la animación a todos los h1
 }
@@ -316,10 +377,7 @@ h1 {
     gap: 0.5rem;
   }
 
-  .hero-img {
-    width: 100%;
-    max-width: 300px;
-  }
+ 
 }
 
 @mixin box-shadow($color, $size) {
