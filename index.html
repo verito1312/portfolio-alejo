@@ -36,67 +36,72 @@
 </head>
 <body>
   <!-- Navbar -->
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="../index.html" title="Inicio">
-      <i class="bi bi-house-door-fill"></i>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mainNavbar">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="/portfolio-alejo/sobremi.html">Sobre mí</a></li>
-        <li class="nav-item"><a class="nav-link" href="/portfolio-alejo/proyectos.html">Proyectos</a></li>
-        <li class="nav-item"><a class="nav-link" href="/portfolio-alejo/blog.html">Blog</a></li>
-        <li class="nav-item"><a class="nav-link" href="/portfolio-alejo/presupuesto.html">Presupuesto</a></li>
-        <li class="nav-item"><a class="nav-link" href="/portfolio-alejo/contacto.html">Contacto</a></li>
-      </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html" title="Inicio">
+        <i class="bi bi-house-door-fill"></i>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="./pages/sobremi.html">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="./pages/proyectos.html">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="./pages/blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="./pages/presupuesto.html">Presupuesto</a></li>
+          <li class="nav-item"><a class="nav-link" href="./pages/contacto.html">Contacto</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <!-- Contenido principal -->
   <main>
     <!-- Hero Section -->
     <header class="hero">
       <div class="container">
+          <img src="./img/alejotejera.png" alt="Alejandro Tejera" class="hero-img animate__animated animate__fadeIn">
+          <p class="lead">Diseño Industrial | Innovación | Creatividad</p>
         <h1 class="animate__animated animate__bounce">Bienvenido a mi Portafolio</h1>
-        <img src="./img/alejotejera.png" alt="Alejandro Tejera" class="hero-img animate__animated animate__fadeIn">
-        <p class="lead">Diseño Industrial | Innovación | Creatividad</p>
         <a href="./pages/sobremi.html" class="btn btn-cta animate__animated animate__pulse animate__infinite">Sobre mí</a>
       </div>
     </header>
 
-    <!-- Alert Section -->
-    <div class="alert alert-primary text-center" role="alert">
-      ¡Bienvenido a mi portafolio! Explora mis proyectos y descubre mi enfoque en el diseño industrial. Si tienes alguna consulta o proyecto, no dudes en contactarme.
-    </div>
 
-    <!-- Sección de Proyectos -->
+    <!-- Carrusel de Proyectos -->
     <section id="proyectos">
-      <div class="container">
+      <div class="container-sm" style="max-width: 600px;">
         <h2 class="section-title">Proyectos Destacados</h2>
-        <div class="projects-grid">
-          <!-- Proyecto 1 -->
-          <div class="project-card">
-            <img src="./img/sunguay20.jpg" alt="Dispositivo SUNguay 2.0" class="project-img">
-            <div class="project-content">
-              <h5>The SUNguay 2.0</h5>
-              <p>Dispositivo portátil para calentar agua, controlado por Bluetooth con app Android. Ideal para preparar mate con temperatura precisa.</p>
+        <div id="proyectosCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <!-- Proyecto 1 -->
+            <div class="carousel-item active">
+              <img src="./img/sunguay20.jpg" class="d-block w-100 carousel-img" alt="Dispositivo SUNguay 2.0">
+              <div class="carousel-caption rounded p-2">
+                <h5>The SUNguay 2.0</h5>
+              </div>
             </div>
-          </div>
-          <!-- Proyecto 2 -->
-          <div class="project-card">
-            <img src="./img/thebox1.jpg" alt="Bolsa de madera para SUNguay" class="project-img">
-            <div class="project-content">
-              <h5>Wooden pouch</h5>
-              <p>Bolsa de madera diseñada para guardar el SUNGuay 2.0 cuando no está en uso. Fabricada con madera contrachapada de 4mm y cierre magnético.</p>
+            <!-- Proyecto 2 -->
+            <div class="carousel-item">
+              <img src="./img/thebox1.jpg" class="d-block w-100 carousel-img" alt="Bolsa de madera para SUNguay">
+              <div class="carousel-caption rounded p-2">
+                <h5>Wooden pouch</h5>
+              </div>
             </div>
-          </div>
+         
+          <!-- Controles del carrusel -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#proyectosCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#proyectosCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
         </div>
-        <!-- Botón Ver más proyectos -->
-        <div class="text-center mt-4">
+        <!-- Botón  -->
+        <div class="text-center mt-3">
           <a href="./pages/proyectos.html" class="btn btn-outline-light">Ver más proyectos</a>
         </div>
       </div>
@@ -131,18 +136,24 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Alejandro Tejera - Diseñador Industrial | Todos los derechos reservados.</p>
-    <p><a href="https://github.com/verito1312/web.git" target="_blank" rel="noopener noreferrer" aria-label="Ver el sitio en GitHub Pages">Ver sitio en GitHub Pages</a></p>
+  <footer class="footer" style="background:#111; color:#e0e0e0; text-align:center; padding:0.5rem 0; font-size:0.95rem;">
+    <p style="margin-bottom:0.3rem;">&copy; 2025 Alejandro Tejera - Diseñador Industrial | Todos los derechos reservados.</p>
+    <p style="margin-bottom:0;">
+      <a href="https://github.com/verito1312/web.git" target="_blank" rel="noopener noreferrer" aria-label="Ver el sitio en GitHub Pages" style="color:#e0e0e0; text-decoration:underline;">Ver sitio en GitHub Pages</a>
+      &nbsp;|&nbsp;
+      <a href="https://www.linkedin.com/in/alejandro-tejera-3b9bb220/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="color:#0a66c2; font-size:1.3em; vertical-align:middle;">
+        <i class="bi bi-linkedin"></i>
+      </a>
+    </p>
   </footer>
   <!-- Scripts -->
 <script>
-  // Agregar la clase "fade-in" al cargar la página
+  // Agrega la clase "fade-in" al cargar la página
   document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.add("fade-in");
   });
 
-  // Manejar la transición al hacer clic en un enlace
+  // Maneja la transición al hacer clic en un enlace
   const links = document.querySelectorAll("a");
   links.forEach(link => {
     link.addEventListener("click", function (event) {
@@ -176,6 +187,13 @@
     headings.forEach(heading => {
       heading.classList.add("animate__animated", "animate__bounce");
     });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var toastEl = document.getElementById('welcomeToast');
+    var toast = new bootstrap.Toast(toastEl, { delay: 6000 });
+    toast.show();
   });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
